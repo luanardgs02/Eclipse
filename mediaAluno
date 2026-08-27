@@ -1,0 +1,32 @@
+package mediaAluno;
+
+//importação do pct
+import java.util.Scanner;
+public class MediaAluno {
+
+	public static void main(String[] args) {
+	// obj Scanner
+		Scanner scanner = new Scanner(System.in);
+		// ler os números com casas decimais
+		System.out.print("DIGITE A 1ª NOTA: ");
+		double nota1 = scanner.nextDouble();
+		
+		System.out.print("DIGITE A 2ª NOTA: ");
+		double nota2 = scanner.nextDouble();
+		
+		// media das notas
+		double media = (nota1+nota2)/2;
+		System.out.println("SUA MÉDIA É: "+media);
+		
+		//estrutura if
+		if (media >= 7.0) {
+            System.out.println("Situação: APROVADO!");
+        } else if (media >= 5.0) {
+            System.out.println("Situação: EM RECUPERAÇÃO.");
+        } else {
+            System.out.println("Situação: REPROVADO.");
+        }
+		// Scanner fechado
+		scanner.close();
+	}
+}
