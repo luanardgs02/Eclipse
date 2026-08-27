@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class TriangleArea {
+
+	//construtor
+	public static void main(String[] args) {
+		double base, altura, area;
+		Scanner reader= new Scanner(System.in);
+		
+		//metodo
+		System.out.println("Digite a base do triângulo: ");
+		base=reader.nextDouble();
+		
+		System.out.println("Digite a altura do triângulo: ");
+		altura=reader.nextDouble();
+		
+		area=(double)1/2*base*altura;
+		
+		//saida
+		System.out.println("A área é "+area+".");
+
+	}
+
+}
