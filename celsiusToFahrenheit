@@ -1,0 +1,24 @@
+package celsiusToFahrenheit;
+
+import java.util.Scanner;
+
+public class CelsiusToFahrenheit {
+
+	public static void main(String[] args) {
+		// variaveis declaradas
+		double celsius;
+		double fahrenheit;
+		// entrada do usuário
+		System.out.println("Digite a temperatura em celsius: ");
+		Scanner entrada = new Scanner(System.in);
+		// leitura da entrada do usuário
+		celsius = entrada.nextDouble();
+		// fórmula de conversão
+		fahrenheit = (celsius * 9/5) + 32;
+		// exibição do resultado
+		System.out.println(celsius + " graus Celsius equivalem a " + fahrenheit + "");
+		// fechamento do scanner
+		entrada.close();
+	}
+
+}
