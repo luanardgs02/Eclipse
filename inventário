@@ -1,0 +1,59 @@
+package inventário;
+import java.util.Scanner;
+public class ProductTester {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		
+		//variaveis locais
+				int tempNumber;
+				String tempName;
+				int tempQty;
+				double tempPrice;
+			
+				//infos dos produtos
+			
+			System.out.print("\n\nInsira o nome do produto: ");
+			tempName = in.nextLine();
+			System.out.print("Insira a quantidade em estoque para este produto: ");
+			tempQty = in.nextInt();
+			System.out.print("Insira o preço para este produto: ");
+			tempPrice = in.nextDouble();
+			System.out.print("Insira o número do item: ");
+			tempNumber = in.nextInt();
+				
+		// 2 objts no construtor
+		Produto p1 = new Produto(tempNumber, tempName, tempQty, tempPrice);
+		
+		in.nextLine();
+		System.out.print("\n\nInsira o nome do produto: ");
+		tempName = in.nextLine();
+		System.out.print("Insira a quantidade em estoque para este produto: ");
+		tempQty = in.nextInt();
+		System.out.print("Insira o preço para este produto: ");
+		tempPrice = in.nextDouble();
+		System.out.print("Insira o número do item: ");
+		tempNumber = in.nextInt();
+			
+		Produto p2 = new Produto(tempNumber, tempName, tempQty, tempPrice);
+		in.close();
+		
+		//objts usando valores para argumentos
+		Produto p3 = new Produto(3, "Hot Shots", 75, 8.99);
+		Produto p4 = new Produto(4, "Brothers In Arms", 200, 7.75);
+		Produto p5 = new Produto(5, "Fantastic",500,9.50);
+		Produto p6 = new Produto(6, "The Party Album", 150, 4.00);
+		
+		p6.setActive(false);
+		
+		//descrição de cada obj
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
+		System.out.println(p4);
+		System.out.println(p5);
+		System.out.println(p6);
+	}
+
+}
