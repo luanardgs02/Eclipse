@@ -1,0 +1,19 @@
+package onibus;
+import java.util.Scanner;
+public class FieldTrip {
+
+	public static void main(String[] args) {
+		int pessoas,lugares,van;
+		String planet;
+		Scanner reader=new Scanner(System.in);
+		
+		System.out.println("Escreva o número de pessoas que vão para a viagem ao campo: ");
+		pessoas=reader.nextInt();
+		lugares=pessoas/45;
+		van=pessoas%45;
+		
+		System.out.println("Você vai precisar de " +lugares+ " lugares. O número de pessoas que vão de van é: "+van+"." );
+
+	}
+
+}
