@@ -1,0 +1,18 @@
+package validacaoEntrada;
+
+public class ValidacaoEntrada {
+
+	public static void main(String[] args) {
+		
+		int numero=0;
+		// loop, testando a condição depois da execução do bloco
+		do {
+			System.out.println("Digite um valor maior que 10: "+numero);
+			numero++; // nova tentativa a cada loop
+			
+		}while(numero<=10); 
+		
+		System.out.println("O número "+numero+ " é maior que 10");
+	}
+
+}
