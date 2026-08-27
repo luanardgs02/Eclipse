@@ -1,0 +1,15 @@
+package carro;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+				Carro carro1 = new Carro("Honda", "Civic", "Azul", 2022);
+				Carro carro2 = new Carro("Volkswagen", "Gol", "Branco", 2021);
+			
+			System.out.println("Carro 1: "+ carro1.obterInformacoes());
+			carro1.ligar();
+			carro2.acelerar();
+			carro1.desligar();
+		}
+	}
