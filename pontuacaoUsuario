@@ -1,0 +1,20 @@
+package pontuacaoUsuario;
+import java.util.Scanner;
+public class PontuacaoUsuario {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		double[] scores = new double[5];
+		double total = 0;
+		double avg = 0;
+		for(int i = 0; i < 5; i++){
+		System.out.println("Insira as 5 pontuações de seus testes:");
+		scores[i] = in.nextDouble();
+		total+=scores[i];
+		}
+		avg = total / 5;
+		System.out.println("A média das pontuações desses testes é: " + avg);
+
+	}
+
+}
