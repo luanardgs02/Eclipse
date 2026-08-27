@@ -1,0 +1,62 @@
+package pesoPlaneta;
+import java.util.Scanner;
+public class PesoPlaneta {
+
+	public static void main(String[] args) {
+		
+		double weight,newWeight,conversion;
+		int choice;
+		String planeta;
+		Scanner reader = new Scanner(System.in);
+
+		System.out.println("Digite sua altura na Terra em centimetros: ");
+		weight=reader.nextDouble();
+		
+		System.out.println("Escolha um planeta: ");
+		System.out.println("1- Mercúrio");
+		System.out.println("2- Venus");
+		System.out.println("3- Marte");
+		System.out.println("4- Jupiter");
+		System.out.println("5-Saturno");
+		System.out.println("6- Urano");
+		System.out.println("7- Netuno");
+		
+		choice=reader.nextInt();
+		if (choice==1)
+		{
+			planeta="Mercúrio";
+			conversion=.38;
+		} else if(choice==2)
+		{
+			planeta="Venus";
+			conversion=.91;
+		} else if(choice==3)
+		{
+			planeta="Marte";
+			conversion=.38;
+		} else if(choice==4)
+		{
+			planeta="Jupiter";
+			conversion=.236;
+		} else if(choice==5)
+		{
+			planeta="Saturno";
+			conversion=.92;
+		} else if(choice==6)
+		{
+			planeta="Urano";
+			conversion=.89;
+		} else if(choice==7)
+		{
+			planeta="Netuno";
+			conversion=.1125;
+		}
+	else
+		{
+		planeta="ESCOLHA INDISPONÍVEL!";
+		conversion=0;
+	}
+		newWeight=weight*conversion;
+		System.out.println("Sua altura em " +planeta+ "é: "+newWeight+".");
+	}
+}
