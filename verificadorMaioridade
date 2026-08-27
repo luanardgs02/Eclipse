@@ -1,0 +1,24 @@
+package verificadorMaioridade;
+// importação do pct Scanner
+import java.util.Scanner;
+
+public class VerificadorMaioridade {
+
+	public static void main(String[] args) {
+		// obj Scanner
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("DIGITE SUA IDADE: ");
+		//leitura do número inteiro digitado pelo usuário
+		int idade= scanner.nextInt();
+		
+		//verificação da idade
+		if(idade>=18) {
+			System.out.println("VOCÊ É MAIOR DE IDADE.");
+		} else {
+			System.out.println("VOCÊ É MENOR DE IDADE.");
+		}
+	//fechamento do Scanner
+		scanner.close();
+	}
+}
