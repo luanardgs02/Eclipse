@@ -1,0 +1,23 @@
+package divisaoDeArrays;
+
+public class DivisaoDeArrays {
+
+	public static void main(String[] args) {
+		int[] numeradores = {10, 20, 30, 40};
+		int [] denominadores = {2, 5, 0, 8};
+		
+		try {
+			for (int i = 0; i < numeradores.length; i++) {
+				int resultado = numeradores[i]/denominadores[i];
+				System.out.println(numeradores[i]+ "/" + denominadores[i]+ "=" + resultado);
+			}
+			
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.err.println("ERRO: Os arrays tem tamanhos diferentes.");
+		} catch (ArithmeticException e) {
+			System.err.println("ERRO: Tentativa de divisão por zero.");
+		} finally {
+			System.out.println("Fim do cálculo de divisões.");
+		}
+	}
+}
