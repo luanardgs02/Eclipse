@@ -1,0 +1,12 @@
+package programaComErros;
+
+public class ProgramaComErros {
+
+	public static void main(String[] args) {
+		// declaração das variáveis
+		int idade = 25;
+		// impressão da mensagem
+		System.out.println("Minha idade é: " + idade);
+	}
+
+}
