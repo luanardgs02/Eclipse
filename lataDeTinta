@@ -1,0 +1,37 @@
+package lataDeTinta;
+import java.util.Scanner;
+public class LataDeTinta {
+
+	public static void main(String[] args) {
+
+		double length,width,height,area,extraArea;
+		int cincoLitros=0,umLitro=0;
+		Scanner reader= new Scanner(System.in);
+		System.out.println("Este programa determinará a quantidade ideal de tinta que deve ser"
+		+ " comprada para pintar seu ambiente.");
+		System.out.println("Qual é a altura da sala?");
+		height=reader.nextDouble();
+		System.out.println("Qual é a largura da sala?");
+		width=reader.nextDouble();
+		System.out.println("Qual é o comprimento da sala?");
+		length=reader.nextDouble();
+		
+		area=2*height*length + 2*height*width + length*width;
+		cincoLitros=(int)(area/1500);
+		extraArea=area-cincoLitros*1500;
+		umLitro=(int)(extraArea/300);
+		
+		if(extraArea-umLitro*300>0)
+		umLitro++;
+		
+		if(umLitro>=4)
+		{
+		cincoLitros++;
+		umLitro=0;
+		}
+
+		System.out.println("Você deveria comprar " + cincoLitros + " cinco baldes de litros a R$ 15 cada.");
+		System.out.println("Você deveria comprar " + umLitro + " baldes de um litro a R$ 4 cada.");
+	}
+
+}
