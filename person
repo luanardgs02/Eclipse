@@ -1,0 +1,18 @@
+package person;
+
+public class ManagingPeople {
+public static void main(String[] args) {
+	//dados
+	Person p1 = new Person("Julia ",19);
+	Person p2 = new Person("Rafael ",17);
+	//metodo
+	if(p1.getAge()==p2.getAge())
+	{
+			System.out.println(p1.getName()+ "tem a mesma idade que "+p2.getName());	
+	}
+		else
+		{
+			System.out.println(p1.getName()+"não tem a mesma idade que "+p2.getName());
+		}
+	}
+}
