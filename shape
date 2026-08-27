@@ -1,0 +1,28 @@
+package shape;
+
+public class Shape {
+
+	int numLados;
+	boolean regular;
+	Shape(){
+	numLados = 3;
+	regular=true;
+	}
+	Shape(int n, boolean regular){
+		numLados = n;
+		this.regular = regular;
+		}
+		public boolean isRegular(){
+		return regular;
+		}
+		public int getSides(){
+		return numLados;
+		}
+		public void setSides(int s){
+		numLados = s;
+		}
+		public void setRegular(boolean regular){
+		this.regular = regular;
+		}
+		
+	}
