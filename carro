@@ -1,0 +1,49 @@
+package carro;
+
+public class Carro {
+	// atributos
+	String marca;
+	String modelo;
+	String cor;
+	int ano;
+	
+	// construtor
+	public Carro(String marca, String modelo, String cor, int ano) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.cor = cor;
+		this.ano = ano;
+	}
+	
+	// método
+public void ligar() {
+	System.out.println("O carro " + marca + " " + modelo + " está ligado.");	
+}
+public void acelerar() {
+	System.out.println("O carro "+ marca + " " + modelo + " está acelerando.");
+}
+public void desligar () {
+	System.out.println("O carro " + marca + " " + modelo + " foi desligado.");
+}
+
+// Objts da classe Carro usando construtor
+public static void main(String[] args) {
+	Carro meuCarro = new Carro ("Toyota",  "Corolla", "Prata", 2023);
+	Carro outroCarro = new Carro ("Ford", "Focus", "Vermelho", 2020);
+	
+	System.out.println("Meu carro: " + meuCarro.marca + " " + meuCarro.modelo);
+	System.out.println("Outro carro: "+ outroCarro.cor + " " + outroCarro.ano);
+	
+	meuCarro.ligar();
+	outroCarro.acelerar();
+	meuCarro.desligar();
+	
+	System.out.println(meuCarro.obterInformacoes());
+	System.out.println(outroCarro.obterInformacoes());
+}
+	
+	// método para obter as infos do carro
+	public String obterInformacoes() {
+		return "Marca: " + marca + ", Modelo: " + modelo + ", Cor: " + cor + ", Ano: " + ano + " ";
+	}
+}
