@@ -1,0 +1,22 @@
+package kmToMiles;
+import java.util.Scanner;
+public class KmToMiles {
+
+	public static void main(String[] args) {
+		// variaveis declaradas
+		double quilometros;
+		double milhas;
+		// entrada do usuário
+		System.out.println("Digite a distância em quilômetros: ");
+		Scanner entrada = new Scanner(System.in);
+		// formula de conversão
+		quilometros = entrada.nextDouble();
+		milhas = quilometros * 0.621371;
+		// exibição do resultado
+		System.out.println(quilometros + " quilômetros equivalem a " + milhas + "");
+		// fechamento do scanner
+		entrada.close();
+		
+	}
+
+}
