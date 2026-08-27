@@ -1,0 +1,46 @@
+package mensagemDecodificada;
+import java.util.Scanner;
+public class MensagemDecodificada {
+
+	public static void main(String[] args) {
+
+		Scanner in = new Scanner(System.in); 
+		
+		System.out.println("Por favor, insira uma mensagem secreta, um número de cada vez.");
+		int input = 0; 
+		String decodedMessage = "";
+		for(int i=0; i<=9; i++) { 
+		input = in.nextInt();
+		
+		switch(input) {
+		case 1:
+		decodedMessage+="D";
+		break;
+		case 2:
+		decodedMessage+="W";
+		break;
+		case 3:
+		decodedMessage+="E";
+		break;
+		case 4:
+		decodedMessage+="L";
+		break;
+		case 5:
+		decodedMessage+="H";
+		break;
+		case 6:
+		decodedMessage+="O";
+		break;
+		case 7:
+		decodedMessage+="R";
+		break;
+		default:
+		System.out.println("Por favor, digite um número de 1 a 7 para que a decodificação funcione.");
+
+			}
+		}
+		in.close(); //close the Scanner
+		System.out.println("Sua mensagem decodificada é: "+decodedMessage);
+	}
+
+}
