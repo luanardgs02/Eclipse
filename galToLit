@@ -1,0 +1,19 @@
+package galToLit;
+// importação do scanner
+import java.util.Scanner;
+// classe publica galões para litros
+public class GalToLit {
+	Scanner in= new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	// número de galões e litros
+		double gallons=10;
+		double liters=0;
+		// multiplicação dos galões em litros
+		liters=gallons*3.785;
+		// saida do código
+		System.out.println(gallons+" gallons equals "+liters+" liters");
+	}
+
+}
