@@ -1,0 +1,193 @@
+package classeDeck;
+import java.util.Scanner;
+public class ClasseDeck {
+
+	public static void main(String[] args) {
+		
+		Scanner reader = new Scanner(System.in);
+		Deck deck = new Deck();
+		deck.shuffle();
+		Mao dealer = new Mao(deck.deal(),deck.deal());
+		Mao player = new Mao(deck.deal(),deck.deal());
+		int playerPoints=0,dealerPoints=0;
+		System.out.println("Aqui está sua mão.");
+		player.display();
+		playerPoints=player.getPoints();
+		System.out.println("Você tem " + playerPoints + " pontos.");
+		
+		int choice = 1;
+		while(choice == 1 && playerPoints < 21 && player.numCards < 5){
+		System.out.println("Você gostaria de outro cartão?");
+		System.out.println("1. SIM");
+		System.out.println("2. NÃO");
+		choice = reader.nextInt();
+		if(choice == 1){
+			player.hit(deck.deal());
+			System.out.println("Aqui está sua mão.");
+			player.display();
+			playerPoints = player.getPoints();
+			System.out.println("Você tem " + playerPoints + " pontos.");
+			}
+		}
+		dealerPoints = dealer.getPoints();
+		while(dealerPoints < 16 && dealer.numCards < 5){
+			dealer.hit(deck.deal());
+			dealerPoints=dealer.getPoints();
+		}
+		System.out.println("O revendedor tem: ");
+		dealer.display();
+		System.out.println("O revendedor tem: " + dealerPoints + " pontos.");
+		
+		if(playerPoints > 21)
+			System.out.println("Jogador perdeu. O revendedor ganha.");
+		else if(dealerPoints > 21)
+				System.out.println("O revendedor perdeu. O jogador venceu.");
+		else if(dealerPoints>playerPoints)
+				System.out.println("Revendedor venceu.");
+			else if(dealerPoints<playerPoints)
+				System.out.println("Jogador venceu.");
+			else if(dealerPoints==playerPoints)
+			System.out.println("Dealer & Player tied.");
+	}
+
+}
+
+			public class Card{
+				String suit,name;
+				int points;
+			Card(int n1, int n2){
+				suit = getSuit(n1);
+				name = getName(n2);
+				points = getPoints(name);
+			}
+			public String toString(){
+				return "The " + name + " of " + suit;
+			}
+			public String getName(int i){
+				if(i == 1) return "Ás";
+				if(i == 2) return "Dois";
+				if(i == 3) return "Três";
+				if(i == 4) return "Quatro";
+				if(i == 5) return "Cinco";
+				if(i == 6) return "Seis";
+				if(i == 7) return "Sete";
+				if(i == 8) return "Oito";
+				if(i == 9) return "Nove";
+				if(i == 10) return "Dez";
+				if(i == 11) return "Valete";
+				if(i == 12) return "Rainha";
+				if(i == 13) return "Rei";
+			return "erro";
+			}
+			
+			public int getPoints(String n){
+				if(n == "Valete" || n == "Rainha" || n == "Rei"|| n == "Dez")
+				return 10;
+				if(n == "Dois")
+				return 2;
+				if(n == "Três")
+				return 3;
+				if(n == "Quatro")
+				return 4;
+				if(n == "Cinco")
+				return 5;
+				if(n == "Seis")
+				return 6;
+				if(n == "Sete")
+				return 7;
+				if(n == "Oito")
+				return 8;
+				if(n == "Nove")
+				return 9;
+				if(n == "Ás")
+				return 11;
+				return -1;
+				}
+			
+			public String getSuit(int i){
+				if(i == 1) return "Ouros";
+				if(i == 2) return "Paus";
+				if(i == 3) return "Espadas";
+				if(i == 4) return "Copas";
+				return "erro";
+				}
+			
+			}
+			
+			public class Mao {
+			Card[] cardArray = new Card[5];
+			int numCards = 0;
+			Mao(Card c1,Card c2){
+			cardArray[0] = c1;
+			cardArray[1] = c2;
+			numCards=2;
+			}
+			
+			public int getPoints(){
+			int points = 0;
+			for(int i = 0; i < numCards; i++)
+			points += cardArray[i].points;
+			if(points > 21)
+			points = 0;
+			boolean aceFound = false;
+			for(int i = 0; i < numCards; i++){
+			if(!aceFound){
+			String a = "Ás";
+			if(a.equals(cardArray[i].name) && cardArray[i].points == 11){
+			cardArray[i].points=1;
+			aceFound=true;
+				}
+			}
+			points += cardArray[i].points;
+		}
+	}
+				return points;
+			}
+			public void display(){
+				for(int i = 0; i < numCards; i++)
+					System.out.println(cardArray[i]);
+			}
+			public void hit(Card c){
+				if(numCards >= 5){
+					System.out.println("Maximum number of cards is 5.");
+				return;
+			}
+			cardArray[numCards] = c;
+			numCards++;
+		}
+	}		
+	
+	public class Deck {
+		Card[] cardArray = new Card[52];
+		int nextToDeal = 0;
+		Deck(){ 
+		int suits = 4;
+		int cardType = 13;
+		int cardCount = 0;
+		for(int i = 1;i <= suits; i++)
+		for(int j = 1; j <= cardType; j++){
+		cardArray[cardCount] = new Card(i,j);
+		cardCount++;
+		}
+	}
+	public void print(){
+		for(int i = 0; i < cardArray.length; i++)
+		System.out.println(cardArray[i]);
+
+	}
+	public void shuffle(){
+		int c1,c2;
+		Card temp;
+		for(int i = 0; i < cardArray.length; i++){
+		c1 = (int)(Math.random()*cardArray.length);
+		c2 = (int)(Math.random()*cardArray.length);
+		temp = cardArray[c1];
+		cardArray[c1] = cardArray[c2];
+		cardArray[c2] = temp;
+			}
+		}
+		public Card deal(){
+		nextToDeal++;
+		return cardArray[nextToDeal - 1];
+			}
+		}
