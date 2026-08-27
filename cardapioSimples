@@ -1,0 +1,35 @@
+package cardapioSimples;
+import java.util.Scanner;
+public class CardapioSimples {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Menu de pratos: ");
+		System.out.println("1- Pizza;");
+		System.out.println("2- Hambúrger;");
+		System.out.println("3- Salada;");
+		System.out.println("Digite o número do pedido: ");
+		
+		int numero = scanner.nextInt();
+		
+		switch(numero) {
+			case 1: 
+				System.out.println("Você escolheu Pizza!");
+			break;
+		
+			case 2: 
+				System.out.println("Você escolheu Hambúrguer!");
+			break;
+		
+			case 3: 
+				System.out.println("Você escolheu Salada!");
+			break;
+			
+			default: 
+				System.out.println("Digite uma opção válida!");
+			break;
+	}
+		scanner.close();
+	}
+}
