@@ -1,0 +1,44 @@
+package pontoFlutuate;
+import java.util.Scanner;
+public class PontoFlutuante {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		double num1 = 0, num2 = 0, answer = 0;
+		char operator = ' ';
+		String line = "";
+		
+		System.out.print("Digite o 1° número: ");
+		num1= scan.nextDouble();
+		System.out.print("Digite o 2° número: ");
+		num2= scan.nextDouble();
+		System.out.print("Digite o operador: ");
+		
+		line= scan.next();
+		operator = line.charAt(0);
+	//operações matemáticas	
+		switch (operator) {
+			case '*':
+				answer = num1 * num2;
+				break;
+			case '/':
+				answer = num1 / num2;
+				break;
+			case '-':
+				answer = num1 - num2;
+				break;
+			case '+':
+				answer = num1 + num2;
+				break;
+			case '%':
+				answer = num1 % num2;
+				break;
+		default:
+			System.out.println("Operador inválido!");
+			System.exit(1);
+		}
+		System.out.println("Resposta: " + answer);
+	}
+
+}
