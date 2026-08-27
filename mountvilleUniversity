@@ -1,0 +1,41 @@
+package mountvilleUniversity;
+import java.util.Scanner;
+public class MountvilleUniversity {
+
+	public static void main(String[] args) {
+
+		String orador;
+		double gpa;
+		int totalEstudantes, score;
+		boolean qualify=false;
+		
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Esse programa vai definir se você entrará na Mountville University.");
+		System.out.println("Por favor, responda as quetões seguintes.");
+		System.out.println("Quantos alunos estudaram na sua escola?");
+		totalEstudantes=reader.nextInt();
+		
+		if(totalEstudantes>=1400) {
+			System.out.println("Você já foi orador na sua escola? Responda S/N");
+			
+			orador=reader.next();
+			if(orador.equals("S"))
+				qualify=true;
+		}
+		
+		if(!qualify) {
+			System.out.println("Qual foi sua média de notas em uma escala de 4.0?");
+			gpa=reader.nextDouble();
+			System.out.println("Qual sua pontuação no SAT?");
+			score=reader.nextInt();
+			if(gpa>=4.0 && score>=1100 ||gpa>=3.5 && score>=1300 ||gpa>=3.0 && score>=1500)
+				qualify=true;
+		}
+		if(qualify)
+			System.out.println("PARABÉNS! Você foi qualificado para Mountville University.");
+		else
+			System.out.println("DESCULPE! Infelizmente você não é qualificado para Mountville University");
+		
+	}
+
+}
