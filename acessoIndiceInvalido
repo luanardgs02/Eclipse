@@ -1,0 +1,16 @@
+package acessoIndiceInvalido;
+
+public class AcessoIndiceInvalido {
+
+	public static void main(String[] args) {
+		int[] num = {10,20,30,40,50};
+		
+		try {
+			System.out.println("Tentando acessar o elemento no índice 10");
+			int elemento = num[10];
+			System.out.println("Elemento: "+elemento);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("ERRO: O índice solicitado não existe no array!");
+		}
+		System.out.println("O programa segue normal.");
+	}
