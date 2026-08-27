@@ -1,0 +1,18 @@
+package contagemRegressiva;
+
+public class ContagemRegressiva {
+
+	public static void main(String[] args) {
+		// n° inteiro
+		int contador = 10;
+		// repete o bloco de código
+		while(contador>=1) {
+			System.out.println(contador);
+			contador--;
+			
+		}
+		
+		System.out.println("Fogo!");
+	}
+
+}
